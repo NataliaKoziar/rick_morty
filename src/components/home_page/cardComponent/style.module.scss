@@ -4,23 +4,40 @@
     line-height: $line;
     letter-spacing: $spacing;
     color: $color;
+   
 }
 .card{
     height: 244px;
-    width: 240px;
+    width: 100%;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
     border-radius: 4px;
+    overflow: hidden;
     .media{
         height: 168px;
-        background-color: aqua;
+        background-size: cover;
+        background-position: center;
+        
     }
     .headline{
         padding: 12px 16px;
         .title{
-            @include fontView(500, 20px, 30px, 0.15px, rgba(0, 0, 0, 0.87))
+            @include fontView(500, 20px, 30px, 0.15px, rgba(0, 0, 0, 0.87));
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space:nowrap;
+          
         }
         .subtitle{
-            @include fontView(400, 14px, 21px, 0.25px, rgba(0, 0, 0, 0.6))
+            @include fontView(400, 14px, 21px, 0.25px, rgba(0, 0, 0, 0.6));
+        }
+    }
+}
+@media  (max-width:547px) {
+    .card{
+        height: 308px;
+        width: 312px;
+        .media{
+            height: 232px;
         }
     }
 }

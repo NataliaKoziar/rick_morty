@@ -4,7 +4,7 @@ import { actionTypes } from "./action/actionTypes";
 
 const initialState ={
     characters:[],
-    searchValue:'',
+    inputValue:'',
     loading:false
 }
 
