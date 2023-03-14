@@ -18,7 +18,7 @@ export const CharactersReducer = (state= initialState, action)=>{
         case actionTypes.CHANGE_SEARCH_VALUE:
             return {
                 ...state,
-                searchValue: action.payload
+                inputValue: action.payload
 
             };
         

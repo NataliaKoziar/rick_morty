@@ -1,6 +1,6 @@
 import {Routes, Route} from "react-router-dom"
 import './App.css';
-import { CharactersPage } from "./components/CharactersPage.jsx/CharacterPage";
+import { CharactersPage } from "./components/CharactersPage/CharacterPage";
 import { HomePage } from "./components/home_page/HomePage";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
      <Routes>
       <Route path={"/"}  element = {<HomePage/>}/>
-      <Route path={"/character/:id"}  element = {<CharactersPage/>}/>
+      <Route path={"/characters/:id"}  element = {<CharactersPage/>}/>
      </Routes>
     </div>
   );

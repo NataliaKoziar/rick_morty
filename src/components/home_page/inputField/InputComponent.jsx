@@ -11,7 +11,7 @@ export const InputComponent = ()=>{
   
     useEffect(()=>{
       const delayDebounceFn = setTimeout(() => {
-       dispatch(charactersActions.changeSearch(inputValue))
+       dispatch(charactersActions.changeSearch(value))
       
       }, 1000)
   
