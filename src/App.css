@@ -4,7 +4,13 @@
     box-sizing: border-box;
 }
 .App{
+    position: relative;
 max-width: 1068px;
 margin: 0 auto;
 padding: 24px;
+}
+@media (max-width:547px){
+    .App{
+        padding: 4px;
+    }
 }

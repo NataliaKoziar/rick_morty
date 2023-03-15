@@ -3,13 +3,16 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { charactersActions } from '../../redux/action/charactersActions'
+import { useNavigate } from "react-router-dom"
 import s from './style.module.scss'
 
 export const CharactersPage = () => {
+    const user = JSON.parse(localStorage.getItem('user')) || null;
     const [item, setItem] = useState();
     const { id } = useParams();
-    console.log({ id });
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     useEffect(() => {
         dispatch(charactersActions.setLoading(true))
         fetch(`https://rickandmortyapi.com/api/character/${id}`)
@@ -22,9 +25,10 @@ export const CharactersPage = () => {
 
     }, [id])
 
-    console.log(item);
+
     return (
-        <div className={s.wrapper}>
+        <>
+        {user != null? <div className={s.wrapper}>
             <GoBackComponent />
             <div className={s.container}>
                 <div className={s.avatar} style={{ backgroundImage: `url(${item?.image})` }}></div>
@@ -54,6 +58,6 @@ export const CharactersPage = () => {
 
                 </div>
             </div>
-        </div>
-    )
+        </div>: navigate('/login')}
+        </>)
 }
